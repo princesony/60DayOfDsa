@@ -89,7 +89,7 @@ let quick_sort = (arr) => {
   }
   return quick_sort(left).concat([pivot], quick_sort(right));
 };
-console.log("Quick Sort:", quick_sort([90, 80, 20, 10]));
+//console.log("Quick Sort:", quick_sort([90, 80, 20, 10]));
 
 // 🔎 Binary Search (O(log n) Time, O(1) Space)
 let binary_search = (arr, target) => {

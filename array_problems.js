@@ -196,4 +196,63 @@ let find_pair = (arr,target)=>{
     }
     return result
 }
-console.log(find_pair([1,2,3,4,5,6],7))
+//console.log(find_pair([1,2,3,4,5,6],7))
+
+
+// second largest number from array from 
+let second_largest = (arr)=>{
+  // let max = Math.max(...arr)
+  // let second_max = Math.max(...arr.filter(x=>x!=max))
+  // return second_max
+  // let max = -Infinity
+  // let second_max = -Infinity
+  // arr.forEach((item)=>{
+  //   if(item>max){
+  //     second_max = max;
+  //     max = item
+  //   }
+  //   if(item!==max && item<second_max){
+  //     second_max = item
+  //   }
+  // })
+  // return second_max
+  // let len = arr.length-2
+  // let sort_arr = arr.sort((a,b)=>(a-b))
+ 
+  // return sort_arr[len]
+
+
+}
+//console.log(second_largest([1,2,3,4,5,6,5,9,10,11]))
+function countWords(sentence) {
+  const words = sentence.trim().replace(/\s+/g, ' ').split(' ');
+
+  const wordCounts = {};
+
+  for (let i = 0; i < words.length; i++) {
+      const currentWord = words[i];
+      
+      if (!wordCounts[currentWord]) {
+          wordCounts[currentWord] = 0;
+      }
+
+      if (i < words.length - 1) {
+          const nextWord = words[i + 1];
+          let currentWordEnd = sentence.indexOf(currentWord) + currentWord.length;
+          let nextWordStart = sentence.indexOf(nextWord, currentWordEnd);
+       
+          let spaceCount = nextWordStart - currentWordEnd;
+          
+          wordCounts[currentWord] = spaceCount;
+      } else {
+          wordCounts[currentWord] = 0;
+      }
+  }
+
+  return wordCounts;
+}
+// Example usage
+ const name01 = "prince       soni  ramgarh"; 
+ const result = countWords(name01);  
+ console.log(result);
+
