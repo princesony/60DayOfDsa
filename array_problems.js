@@ -256,3 +256,72 @@ function countWords(sentence) {
  const result = countWords(name01);  
  console.log(result);
 
+
+
+ function isPrime(N) {
+  if (N <= 1) return false; // Numbers less than 2 are not prime
+  if (N === 2) return true;  // 2 is the only even prime number
+
+ let i = 2; i
+      if (N % i === 0) {
+          return false; 
+      }
+  
+  return true; 
+}
+
+// Example usage:
+console.log(isPrime(2)); // Output: true
+console.log(isPrime(10)); // Output: false
+
+
+let prefix_kaor = ["flower","flow","flowering"]
+
+
+let find_prefix = (arr)=>{
+  let prefix = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    while(arr[i].indexOf(prefix)!==0){
+      prefix = prefix.slice(0,-1);
+    }
+  }
+  return prefix;
+}
+console.log(find_prefix(prefix_kaor))
+
+
+function areAnagrams(str1, str2) {
+  if (str1.length !== str2.length) return false;
+  
+  // Sort both strings and compare
+  return str1.split('').sort().join('') === str2.split('').sort().join('');
+}
+
+// console.log(areAnagrams("listen", "silent")); // true
+// console.log(areAnagrams("hello", "world"));   // false
+
+function isPalindrome(str) {
+  // Remove spaces and convert the string to lowercase for comparison
+  const cleanedStr = str.replace(/\s+/g, '').toLowerCase();
+  
+  // Check if the string is equal to its reverse
+  return cleanedStr === cleanedStr.split('').reverse().join('');
+}
+
+// Example usage:
+let inputString = "A man a plan a canal Panama";
+let isPalindromic = isPalindrome(inputString);
+//console.log(isPalindromic);  // Output: true
+
+
+
+function reverseWords(str) {
+   
+  return str.split(' ').reverse().join(' ');
+}
+
+//   // Example usage:
+//   let inputString = "Hello World from ChatGPT";
+//   let reversedString = reverseWords(inputString);
+//   console.log(reversedString);  // Output: "ChatGPT from World Hello"
+
